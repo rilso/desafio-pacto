@@ -1,0 +1,33 @@
+<mat-card>
+  <h2>{{ isEdit ? 'Editar Vaga' : 'Nova Vaga' }}</h2>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <mat-form-field class="full-width">
+      <mat-label>Título</mat-label>
+      <input matInput formControlName="titulo" />
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <mat-label>Descrição</mat-label>
+      <textarea matInput rows="3" formControlName="descricao"></textarea>
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <mat-label>Requisitos</mat-label>
+      <textarea matInput rows="3" formControlName="requisitos"></textarea>
+    </mat-form-field>
+
+    <div class="botao-container">
+      <button mat-raised-button color="primary" type="submit">
+        {{ isEdit ? 'Atualizar' : 'Cadastrar' }}
+      </button>
+
+      <span class="espacador"></span>
+
+      <button mat-button color="primary" type="button" routerLink="/vagas/admin">
+        Voltar
+      </button>
+    </div>
+  </form>
+</mat-card>
+

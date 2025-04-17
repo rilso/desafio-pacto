@@ -1,0 +1,33 @@
+<mat-card>
+  <h2>Cadastro</h2>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <mat-form-field class="full-width">
+      <mat-label>Nome</mat-label>
+      <input matInput formControlName="nome" />
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <mat-label>Email</mat-label>
+      <input matInput type="email" formControlName="email" />
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <mat-label>Senha</mat-label>
+      <input matInput type="password" formControlName="senha" />
+    </mat-form-field>
+
+    <div class="botao-container">
+      <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Cadastrar</button>
+
+      <span class="espacador"></span>
+
+      <button mat-button color="primary" routerLink="/login" class="mt-2">
+        Voltar
+      </button>
+    </div>
+  </form>
+
+  <p *ngIf="sucesso" class="text-success">Cadastro realizado com sucesso!</p>
+  <mat-error *ngIf="erro">{{ erro }}</mat-error>
+</mat-card>

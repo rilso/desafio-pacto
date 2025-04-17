@@ -1,0 +1,14 @@
+<mat-card-content>
+  <button mat-raised-button color="primary" routerLink="/vagas/admin">Admin</button>
+</mat-card-content>
+
+<mat-card *ngFor="let vaga of vagas" class="vaga-card">
+  <mat-card-title>{{ vaga.titulo }}</mat-card-title>
+  <mat-card-content>
+    <p><strong>Descrição:</strong> {{ vaga.descricao }}</p>
+    <p><strong>Requisitos:</strong> {{ vaga.requisitos }}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="primary">Candidatar-se</button>
+  </mat-card-actions>
+</mat-card>

@@ -1,0 +1,31 @@
+<mat-card>
+  <h2>Login</h2>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <mat-form-field class="full-width">
+      <mat-label>Email</mat-label>
+      <input matInput type="email" formControlName="email" />
+      <mat-error *ngIf="form.get('email')?.invalid">Email inválido</mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="full-width">
+      <mat-label>Senha</mat-label>
+      <input matInput type="password" formControlName="senha" />
+      <mat-error *ngIf="form.get('senha')?.invalid">Senha obrigatória</mat-error>
+    </mat-form-field>
+
+    <div class="botao-container">
+      <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">
+        Entrar
+      </button>
+
+      <span class="espacador"></span>
+
+      <button mat-button color="primary" routerLink="/registrar">
+        Registrar
+      </button>
+    </div>
+  </form>
+
+  <mat-error *ngIf="error" class="mt-2">{{ error }}</mat-error>
+</mat-card>
