@@ -3,6 +3,7 @@
 ## Requisitos para rodar o projeto:
 
 - Docker/Docker Compose instalados e configurados;
+- Java 21;
 - Portas 5432, 8080 e 80 sem utilização;
 - Git instalado.
 
